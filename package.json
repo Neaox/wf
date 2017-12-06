@@ -13,7 +13,7 @@
     "eslint": "standard --verbose | snazzy",
     "lint": "yarn eslint",
     "test": "yarn lint",
-    "precommit": "exec git diff --name-only --cached --relative | grep '\\.jsx\\?$' | xargs standard --verbose | snazzy",
+    "precommit": "git diff --name-only --cached --relative | grep '\\.jsx\\?$' | xargs standard --verbose | snazzy",
     "prepush": "yarn test"
   },
   "bin": {
