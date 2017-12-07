@@ -4,7 +4,9 @@ import chalk from 'chalk'
 
 import { version, name } from '../package.json'
 
-import bindCommands from './commands'
+import commands from './commands'
+
+require('pretty-error').start()
 
 let vorpal = Vorpal()
 
@@ -23,9 +25,8 @@ exec(`npm view ${name} version`, { timeout: 1000 }, (err, remoteVersion, stfErr)
   }
 })
 
-bindCommands(vorpal)
-
 vorpal
+  .use(commands)
   .parse(process.argv)
 
 export default vorpal
