@@ -58,4 +58,4 @@ typings/
 .env
 
 lib/
-config/local.jsoncls
+config/local.json
